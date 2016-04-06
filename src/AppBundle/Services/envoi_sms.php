@@ -87,8 +87,9 @@ else
            "SECOURS EN MONTAGNE\r\n*" .
            " Vérifier GPS et DATA à ON\r\n".
            "\r\n* Accepter le partage\r\n" .
-           "* Patienter\r\n* http://%s%s %s",
-           $this->container->get('router')->getContext()->getHost(),
+           "* Patienter\r\n* http://%s:%s%s %s",
+           $request->getHost(),
+           $request->getPort(),
            $this->generateUrl('position', array('c' => $lastid), true),
            $unite);
 	}
